@@ -1,7 +1,6 @@
-```bash
-cd to folder
-git status
-git add .
-git status
-git commit -m "add file assignment3"
-```
+
+`cd to folder`
+`git status`
+`git add .`
+`git status`
+`git commit -m "add file assignment3"`
