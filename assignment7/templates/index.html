@@ -7,13 +7,24 @@
 <body>
 <h1>Register</h1>
 <table border="1">
-    <form action="/", method="POST">
-        <tr><td><p>Name : &nbsp; <input type = "text" name = "Name"required /> Surname <input type = "text" name = "Surname"  required/> </p></td></tr>
-         <tr><td><p>Email : &nbsp;<input type = "email" name = "Email"  required/></p></td></tr>
-          <tr><td><p>Username : &nbsp;<input type = "text" name = "Username"/></p></td></tr>
-           <tr><td><p>Password : &nbsp;<input type = "password" name = "Password" minlength="8" required/></p></td></tr>
-           <tr align="center"><td> <p><input type = "submit" value = "submit" /></p></td></tr>
+    <p>hello</p>
+    <form method="post" action="{{ url_for('regis') }}">
+        {{ form.csrf_token }}
+        <p>name : {{ form.name }} </p>
+        <p>lastname : {{ form.last }} </p>
+        <p> Email : {{ form.email }}</p>
+        {% for error in form.email.errors %}
+            <li style="color:red">{{ error }}</li>
+        {% endfor %}
+       <p>username : {{ form.username }} </p>
+        <p>password : {{ form.password }} </p>
+        {% for error in form.password.errors %}
+            <li style="color:red">{{ error }}</li>
+        {% endfor %}
+        <input type="submit" value="Submit"/>
+
     </form>
+
 </table>
 </body>
 </html>
